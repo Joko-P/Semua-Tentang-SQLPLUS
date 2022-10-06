@@ -66,7 +66,7 @@ BEGIN
 	END LOOP;
 	
 	-- Nomor_nol_awal is basically subtracting the previous "making zeros" part so we can add the new number after it
-	nomor_nol_awal := SUBSTR(nomor_nol, 1, (panjang_nomor - LENGTH(nomor_terakhir)));
+	nomor_nol_awal := SUBSTR(nomor_nol, 1, (panjang_nomor - LENGTH(nomor_baru)));
 	-- The making of final ID, by placing the prefix first, then adding the zeros, then the last new number
 	id_final := prefix||nomor_nol_awal||TO_CHAR(nomor_baru);
 	-- Returning the new ID
